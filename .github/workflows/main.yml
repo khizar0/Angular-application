@@ -15,10 +15,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-             node-version: 20.x
+          node-version: 20.x
 
       - name: Install dependencies
-        run: npm install
+        working-directory: angular6-realworld-highly-scalable-application
+        run: npm ci
 
       - name: Build Angular app
+        working-directory: angular6-realworld-highly-scalable-application
         run: npm run build
